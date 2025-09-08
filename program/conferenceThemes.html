@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/geomandu_logo.png" type="image/png" />
+    <title>GeoMandu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- navigation top logo part -->
+    <div class="flex justify-center max-w-5xl mx-auto px-4 z-50">
+      <img
+        src="../assets/Untitled-2-01-scaled.jpg"
+        alt="GeoMandu header logo"
+        class="w-full h-auto object-contain"
+      />
+    </div>
+    <!-- navigation -->
+    <nav class="bg-[#0474c4] sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-10 text-white font-medium">
+            <a
+              href="/index.html"
+              class="hover:text-gray-200 flex items-center gap-1"
+            >
+              Home
+            </a>
+            <!-- conference -->
+            <div class="relative group">
+              <a
+                href="#"
+                class="hover:text-gray-200 flex items-center gap-1 text-white font-medium"
+              >
+                Conference <i class="fa-solid fa-angle-down mt-1"></i>
+              </a>
+              <div class="absolute left-0 top-full h-7 w-full z-40"></div>
+
+              <div
+                class="absolute left-0 mt-7 w-56 bg-gray-300 text-sm py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 shadow-lg"
+              >
+                <a
+                  href="../conference/welcomeMessage.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Welcome Message</a
+                >
+                <a
+                  href="../conference/aboutNgs.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >About NGS</a
+                >
+                <a
+                  href="../conference/venue.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Venue</a
+                >
+                <a
+                  href="../conference/committee.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Conference Committee</a
+                >
+                <a
+                  href="../conference/tools.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Conference Toolkit</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Newsletters</a
+                >
+                <a
+                  href="../conference/aboutGeomandu.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >About GeoMandu 2024</a
+                >
+              </div>
+            </div>
+            <!-- program -->
+            <div class="relative group">
+              <a
+                href="#"
+                class="hover:text-gray-200 flex items-center gap-1 text-white font-medium"
+              >
+                Program <i class="fa-solid fa-angle-down mt-1"></i>
+              </a>
+              <div class="absolute left-0 top-full h-7 w-full z-40"></div>
+              <div
+                class="absolute left-0 mt-7 w-64 bg-gray-300 text-sm py-2 z-50 hidden group-hover:block"
+              >
+                <a
+                  href="../program/conferenceThemes.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Conference Themes</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Conference Program</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Program at a Glance</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Pre-conference Workshop</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Post-Conference Visits</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black h9ver:text-texta7-600"
+                  >Geootechnical Model Competition</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Travel and Tours</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Gala Dinner</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Social Program</a
+                >
+              </div>
+            </div>
+            <!-- speaker -->
+            <div class="relative group">
+              <a
+                href="#"
+                class="hover:text-gray-200 flex items-center gap-1 text-white font-medium"
+              >
+                Speakers <i class="fa-solid fa-angle-down mt-1"></i>
+              </a>
+              <div class="absolute left-0 top-full h-7 w-full z-40"></div>
+              <div
+                class="absolute left-0 mt-7 w-56 bg-gray-300 text-sm py-2 z-50 hidden group-hover:block"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >keynote Speakers</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Distinguished Speakers</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Opening Ceremony</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Pre-conference Workshop</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Closing Ceremony</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black h9ver:text-text-00"
+                  >Heritage Time Capsule Project</a
+                >
+              </div>
+            </div>
+            <!-- Papers and presentations -->
+            <div class="relative group">
+              <a
+                href="#"
+                class="hover:text-gray-200 flex items-center gap-1 text-white font-medium"
+              >
+                Papers and Presentations
+                <i class="fa-solid fa-angle-down mt-1"></i>
+              </a>
+              <div class="absolute left-0 top-full h-7 w-full z-40"></div>
+              <div
+                class="absolute left-0 mt-7 w-56 bg-gray-300 text-sm py-2 z-50 hidden group-hover:block"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Information</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Main Topics</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Proceedings Book
+                </a>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Presentation Templates</a
+                >
+              </div>
+            </div>
+            <!-- partners and sponsers -->
+            <div class="relative group">
+              <a
+                href="#"
+                class="hover:text-gray-200 flex items-center gap-1 text-white font-medium"
+              >
+                Partners and Sponsors
+                <i class="fa-solid fa-angle-down mt-1"></i>
+              </a>
+              <div class="absolute left-0 top-full h-7 w-full z-40"></div>
+              <div
+                class="absolute left-0 mt-7 w-56 bg-gray-300 text-sm py-2 z-50 hidden group-hover:block"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Partners</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Sponsors</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Sponsorship
+                </a>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Exhibition Information</a
+                >
+              </div>
+            </div>
+            <!-- Registration -->
+            <div class="relative group">
+              <a
+                href="#"
+                class="hover:text-gray-200 flex items-center gap-1 text-white font-medium"
+              >
+                Registration
+                <i class="fa-solid fa-angle-down mt-1"></i>
+              </a>
+              <div class="absolute left-0 top-full h-7 w-full z-40"></div>
+              <div
+                class="absolute left-0 mt-7 w-56 bg-gray-300 text-sm py-2 z-50 hidden group-hover:block"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Registration Information</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Dates and Prices</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Payment Options
+                </a>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                >
+                  Register Now</a
+                >
+              </div>
+            </div>
+            <!-- Relevent Info-->
+            <div class="relative group">
+              <a
+                href="#"
+                class="hover:text-gray-200 flex items-center gap-1 text-white font-medium"
+              >
+                Relevent Info
+                <i class="fa-solid fa-angle-down mt-1"></i>
+              </a>
+              <div class="absolute left-0 top-full h-7 w-full z-40"></div>
+              <div
+                class="absolute left-0 mt-7 w-56 bg-gray-300 text-sm py-2 z-50 hidden group-hover:block"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Why Kathmandu ?
+                </a>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Travel Information</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                >
+                  Accommodation
+                </a>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                >
+                  Contact</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Mobile Hamburger -->
+          <div class="md:hidden flex items-center">
+            <button id="menu-toggle" class="text-white focus:outline-none">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile Menu-->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-8 py-5">
+          <a href="#" class="block text-white hover:text-gray-200">Home</a>
+          <a href="#" class="block text-white hover:text-gray-200">
+            Conference</a
+          >
+          <a href="#" class="block text-white hover:text-gray-200">Program</a>
+          <a href="#" class="block text-white hover:text-gray-200">Speakers</a>
+          <a href="#" class="block text-white hover:text-gray-200"
+            >Papers and Presentations</a
+          >
+          <a href="#" class="block text-white hover:text-gray-200">
+            Partners and Sponsors</a
+          >
+          <a href="#" class="block text-white hover:text-gray-200">
+            Registration</a
+          >
+          <a href="#" class="block text-white hover:text-gray-200">
+            Relevent Info</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!--  head -->
+    <section
+      class="relative w-full overflow-hidden min-h-[20vh] md:min-h-[20vh] lg:min-h-[25vh] bg-center bg-cover"
+      style="background-image: url('../assets/web-patt.png')"
+      aria-label="Welcome to GeoMandu 2026"
+    >
+      <!-- content -->
+      <div
+        class="relative z-10 max-w-7xl mx-auto px-6 md:px-6 lg:px-6 py-12 flex items-end md:items-center h-full"
+      >
+        <div class="animate-slide-in-left">
+          <h1
+            class="text-3xl md:text-5xl font-semibold text-white leading-tight"
+          >
+            <span
+              class="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent"
+            >
+              Conference Themes
+            </span>
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- conference themes-->
+    <section class="max-w-7xl mx-auto px-6 md:px-8 lg:px-10 py-16">
+      <p class="text-gray-700 text-justify">
+        Not restricting fully to the items listed, this international conference
+        is planned to accommodate the following sub themes.
+      </p>
+      <!-- Capsule Accordion -->
+      <div class="max-w-5xl mx-auto mt-10 space-y-4">
+        <!-- Item 1 -->
+        <div
+          class="capsule rounded-xl border border-gray-300 bg-white shadow-sm"
+        >
+          <button
+            class="capsule-toggle w-full flex items-center justify-between p-5 text-left focus:outline-none"
+            aria-expanded="false"
+            aria-controls="cap-1"
+          >
+            <span class="text-gray-900 font-medium">
+              Earthquake Geotechnical Engineering and Seismic Design of
+              Geotechnical Structures
+            </span>
+            <span
+              class="w-7 h-7 flex items-center justify-center rounded-full border bg-[#0474c4]/30 text-gray-700"
+            >
+              <i class="fa-solid fa-plus text-sm"></i>
+            </span>
+          </button>
+          <div id="cap-1" class="capsule-panel px-5 overflow-hidden">
+            <p class="text-gray-700 pb-4">
+              Seismic design of geotechnical structures, liquefaction, ground
+              improvement techniques, microtremor monitoring and damage
+              prediction, numerical/physical models, case studies, GIS
+              techniques and hazard/risk mapping.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div
+          class="capsule rounded-xl border border-gray-300 bg-white shadow-sm"
+        >
+          <button
+            class="capsule-toggle w-full flex items-center justify-between p-5 text-left focus:outline-none"
+            aria-expanded="false"
+            aria-controls="cap-2"
+          >
+            <span class="text-gray-900 font-medium">
+              Geotechnical Engineering for Sustainable Transportation System
+            </span>
+            <span
+              class="w-7 h-7 flex items-center justify-center rounded-full border bg-[#0474c4]/30 text-gray-700"
+            >
+              <i class="fa-solid fa-plus text-sm"></i>
+            </span>
+          </button>
+          <div id="cap-2" class="capsule-panel px-5 overflow-hidden">
+            <p class="text-gray-700 pb-4">
+              Road and bridge construction in challenging terrains, landslide
+              and slope stability for road safety, sustainable transportation
+              solutions in hilly and mountainous regions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div
+          class="capsule rounded-xl border border-gray-300 bg-white shadow-sm"
+        >
+          <button
+            class="capsule-toggle w-full flex items-center justify-between p-5 text-left focus:outline-none"
+            aria-expanded="false"
+            aria-controls="cap-3"
+          >
+            <span class="text-gray-900 font-medium">
+              Sustainable Foundation Design and Construction
+            </span>
+            <span
+              class="w-7 h-7 flex items-center justify-center rounded-full border bg-[#0474c4]/30 text-gray-700"
+            >
+              <i class="fa-solid fa-plus text-sm"></i>
+            </span>
+          </button>
+          <div id="cap-3" class="capsule-panel px-5 overflow-hidden">
+            <p class="text-gray-700 pb-4">
+              Innovative foundation design for sustainable infrastructure,
+              ground improvement techniques for challenging soil conditions, and
+              earthquake-resilient foundation engineering.
+            </p>
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div
+          class="capsule rounded-xl border border-gray-300 bg-white shadow-sm"
+        >
+          <button
+            class="capsule-toggle w-full flex items-center justify-between p-5 text-left focus:outline-none"
+            aria-expanded="false"
+            aria-controls="cap-3"
+          >
+            <span class="text-gray-900 font-medium">
+              Geohazards and Climate Change and environmental Geotechnics
+            </span>
+            <span
+              class="w-7 h-7 flex items-center justify-center rounded-full border bg-[#0474c4]/30 text-gray-700"
+            >
+              <i class="fa-solid fa-plus text-sm"></i>
+            </span>
+          </button>
+          <div id="cap-3" class="capsule-panel px-5 overflow-hidden">
+            <p class="text-gray-700 pb-4">
+              Assessing the impact of climate change on geohazards, DRR,
+              Sustainable waste disposal and landfill design
+            </p>
+          </div>
+        </div>
+        <!-- Item 5-->
+        <div
+          class="capsule rounded-xl border border-gray-300 bg-white shadow-sm"
+        >
+          <button
+            class="capsule-toggle w-full flex items-center justify-between p-5 text-left focus:outline-none"
+            aria-expanded="false"
+            aria-controls="cap-3"
+          >
+            <span class="text-gray-900 font-medium">
+              Geotechnology in high altitude
+            </span>
+            <span
+              class="w-7 h-7 flex items-center justify-center rounded-full border bg-[#0474c4]/30 text-gray-700"
+            >
+              <i class="fa-solid fa-plus text-sm"></i>
+            </span>
+          </button>
+          <div id="cap-3" class="capsule-panel px-5 overflow-hidden">
+            <p class="text-gray-700 pb-4">
+              Geotechnical challenges in permafrost regions, and its mitigation,
+              GLOF risk management and prevention, Sustainable infrastructure
+              development in high-altitude, glaciated areas
+            </p>
+          </div>
+        </div>
+        <!-- Item 6-->
+        <div
+          class="capsule rounded-xl border border-gray-300 bg-white shadow-sm"
+        >
+          <button
+            class="capsule-toggle w-full flex items-center justify-between p-5 text-left focus:outline-none"
+            aria-expanded="false"
+            aria-controls="cap-3"
+          >
+            <span class="text-gray-900 font-medium">
+              AI in Geotechnical Engineering
+            </span>
+            <span
+              class="w-7 h-7 flex items-center justify-center rounded-full border bg-[#0474c4]/30 text-gray-700"
+            >
+              <i class="fa-solid fa-plus text-sm"></i>
+            </span>
+          </button>
+          <div id="cap-3" class="capsule-panel px-5 overflow-hidden">
+            <p class="text-gray-700 pb-4">
+              Application of Artificial Intelligence and Machine Learning in
+              Geotechnical Engineering
+            </p>
+          </div>
+        </div>
+        <!-- Item 7-->
+        <div
+          class="capsule rounded-xl border border-gray-300 bg-white shadow-sm"
+        >
+          <button
+            class="capsule-toggle w-full flex items-center justify-between p-5 text-left focus:outline-none"
+            aria-expanded="false"
+            aria-controls="cap-3"
+          >
+            <span class="text-gray-900 font-medium">
+              Tunnel Engineering and Underground Construction
+            </span>
+            <span
+              class="w-7 h-7 flex items-center justify-center rounded-full border bg-[#0474c4]/30 text-gray-700"
+            >
+              <i class="fa-solid fa-plus text-sm"></i>
+            </span>
+          </button>
+          <div id="cap-3" class="capsule-panel px-5 overflow-hidden">
+            <p class="text-gray-700 pb-4">
+              Geotechnical challenges in tunnel design and excavation, Tunnel in
+              urban transport, tunnel construction methods and geological
+              conditions
+            </p>
+          </div>
+        </div>
+        <!-- Item 8-->
+        <div
+          class="capsule rounded-xl border border-gray-300 bg-white shadow-sm"
+        >
+          <button
+            class="capsule-toggle w-full flex items-center justify-between p-5 text-left focus:outline-none"
+            aria-expanded="false"
+            aria-controls="cap-3"
+          >
+            <span class="text-gray-900 font-medium"> Ground Improvement </span>
+            <span
+              class="w-7 h-7 flex items-center justify-center rounded-full border bg-[#0474c4]/30 text-gray-700"
+            >
+              <i class="fa-solid fa-plus text-sm"></i>
+            </span>
+          </button>
+          <div id="cap-3" class="capsule-panel px-5 overflow-hidden">
+            <p class="text-gray-700 pb-4">
+              Soil stabilization and ground reinforcement method, Ground
+              improvement for foundation and slope stability, Application of
+              geosynthetics and soil modification
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- stay connected -->
+    <section class="bg-white py-12 border-t border-blue-[#eaf4fb]">
+      <div
+        class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8"
+      >
+        <!-- Left: Text and button -->
+        <div
+          class="flex-1 animate-on-scroll opacity-0 translate-y-32 transition-all duration-1000 ease-in-out"
+        >
+          <h2
+            class="text-3xl md:text-4xl font-semibold text-[#0474c4] mb-2 tracking-wide"
+          >
+            Stay Connected
+          </h2>
+          <p class="text-lg text-gray-600 mb-8">
+            Subscribe today and get the latest notifications on the GeoMandu
+            2024 Conference.
+          </p>
+          <a
+            href="#subscribe"
+            class="inline-block px-8 py-3 text-xl font-semibold tracking-wide border-2 border-[#0474c4] text-[#0474c4] rounded-full transition hover:bg-[#0474c4] hover:text-white hover:border-[#0474c4] mb-8"
+          >
+            Subscribe here
+          </a>
+        </div>
+        <!-- Right: Logo -->
+        <div class="flex-shrink-0">
+          <img
+            src="../assets/geomandu_logo.png"
+            alt="GeoMandu Logo"
+            class="w-48 md:w-60"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-[#eaf4fb] text-white pt-16 pb-8 z-50">
+      <div
+        class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12"
+      >
+        <!-- Contact Us -->
+        <div class="text-gray-700">
+          <h3 class="text-3xl font-semibold mb-4">Contact Us</h3>
+          <p class="mb-2">For all registration enquiries contact us at:</p>
+          <a
+            href="mailto:register@geomandu.org"
+            class="text-[#0474c4] break-all link-underline"
+            >register@geomandu.org</a
+          >
+          <p class="mt-4 mb-2">
+            For all program and general enquiries contact us at:
+          </p>
+          <a
+            href="mailto:info@geomandu.org"
+            class="text-[#0474c4] break-all link-underline"
+            >info@geomandu.org</a
+          >
+          <p class="mt-4">Telephone: +977 1-4411810</p>
+        </div>
+        <!-- Explore Site -->
+        <div class="text-gray-700">
+          <h3 class="text-3xl font-semibold mb-4">Explore Site</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="font-medium text-gr link-underline-footer"
+                >Venue</a
+              >
+            </li>
+            <li>
+              <a href="#" class="font-medium link-underline-footer">Program</a>
+            </li>
+            <li>
+              <a href="#" class="font-medium link-underline-footer"
+                >Registration</a
+              >
+            </li>
+            <li>
+              <a href="#" class="font-medium link-underline-footer">Policies</a>
+            </li>
+            <li>
+              <a href="#" class="font-medium link-underline-footer"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- Event Organisers -->
+        <div class="text-gray-700">
+          <h3 class="text-3xl font-semibold mb-4">Event Organisers</h3>
+          <p>Nepal Geotechnical Society</p>
+          <p>P.O. Box 231</p>
+          <p>Kathmandu, Nepal</p>
+          <p>Telephone: +977 1-4411810</p>
+        </div>
+        <!-- Conference Host & Partners -->
+        <div class="space-y-4 text-gray-700">
+          <h3 class="text-3xl font-semibold mb-2">Supporting Partners</h3>
+          <div class="flex flex-col space-y-2">
+            <img
+              src="../assets/support-2.png"
+              alt="Partner 2"
+              class="h-28 object-contain p-1"
+            />
+            <img
+              src="../assets/sup-1.png"
+              alt="Partner 1"
+              class="h-28 object-contain p-1"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 text-center text-gray-800 text-sm">
+        <p>
+          We acknowledge the traditional custodians of Kathmandu Valley and all
+          indigenous peoples of Nepal, and pay respect to elders past, present
+          and emerging.
+        </p>
+        <p class="mt-2">
+          Copyright &copy; 2024 Nepal Geotechnical Society | All Rights Reserved
+          |
+          <a href="#" class="hover:underline text-[#0474c4]">Privacy Policy</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="../scripts/menu.js"></script>
+    <script src="../scripts/stayconnected.js"></script>
+    <script src="../scripts/conference-themes.js"></script>
+  </body>
+</html>

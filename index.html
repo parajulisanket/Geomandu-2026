@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/geomandu_logo.png" type="image/png" />
+    <title>GeoMandu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-5 right-0 z-50 bg-gray-200 rounded-l text-black text-xl p-2 transition-all duration-300 lg:hidden"
+    >
+      <i class="fa-solid fa-angle-up"></i>
+    </button>
+    <!-- navigation top logo part -->
+    <div class="flex justify-center max-w-5xl mx-auto px-4 z-50">
+      <img
+        src="./assets/Untitled-2-01-scaled.png"
+        alt="GeoMandu header logo"
+        class="w-full h-auto object-contain"
+      />
+    </div>
+    <!-- navigation -->
+    <nav class="bg-[#0474c4] sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-10 text-white font-medium">
+            <a href="#" class="hover:text-gray-200 flex items-center gap-1">
+              Home
+            </a>
+            <!-- conference -->
+            <div class="relative group">
+              <a
+                href="#"
+                class="hover:text-gray-200 flex items-center gap-1 text-white font-medium"
+              >
+                Conference <i class="fa-solid fa-angle-down mt-1"></i>
+              </a>
+              <div class="absolute left-0 top-full h-7 w-full z-40"></div>
+
+              <div
+                class="absolute left-0 mt-7 w-56 bg-gray-300 text-sm py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 shadow-lg"
+              >
+                <a
+                  href="./conference/welcomeMessage.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Welcome Message</a
+                >
+                <a
+                  href="./conference/aboutNgs.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >About NGS</a
+                >
+                <a
+                  href="./conference/venue.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Venue</a
+                >
+                <a
+                  href="./conference/committee.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Conference Committee</a
+                >
+                <a
+                  href="./conference/tools.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Conference Toolkit</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Newsletters</a
+                >
+                <a
+                  href="./conference/aboutGeomandu.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >About GeoMandu 2024</a
+                >
+              </div>
+            </div>
+            <!-- program -->
+            <div class="relative group">
+              <a
+                href="#"
+                class="hover:text-gray-200 flex items-center gap-1 text-white font-medium"
+              >
+                Program <i class="fa-solid fa-angle-down mt-1"></i>
+              </a>
+              <div class="absolute left-0 top-full h-7 w-full z-40"></div>
+              <div
+                class="absolute left-0 mt-7 w-64 bg-gray-300 text-sm py-2 z-50 hidden group-hover:block"
+              >
+                <a
+                  href="./program/conferenceThemes.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Conference Themes</a
+                >
+                <a
+                  href="./program/conferenceProgram.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Conference Program</a
+                >
+                <a
+                  href="./program/programGlance.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Program at a Glance</a
+                >
+                <a
+                  href="./program/preconferenceWorkshop.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Pre-conference Workshop</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Post-Conference Visits</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black h9ver:text-texta7-600"
+                  >Geootechnical Model Competition</a
+                >
+                <a
+                  href="./program/travelAndTours.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Travel and Tours</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Gala Dinner</a
+                >
+                <a
+                  href="./program/socialProgram.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Social Program</a
+                >
+              </div>
+            </div>
+            <!-- speaker -->
+            <div class="relative group">
+              <a
+                href="#"
+                class="hover:text-gray-200 flex items-center gap-1 text-white font-medium"
+              >
+                Speakers <i class="fa-solid fa-angle-down mt-1"></i>
+              </a>
+              <div class="absolute left-0 top-full h-7 w-full z-40"></div>
+              <div
+                class="absolute left-0 mt-7 w-56 bg-gray-300 text-sm py-2 z-50 hidden group-hover:block"
+              >
+                <a
+                  href="./speakers/keynoteSpeakers.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >keynote Speakers</a
+                >
+                <a
+                  href="./speakers/distinguishSpeakers.html"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Distinguished Speakers</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Opening Ceremony</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Closing Ceremony</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black h9ver:text-text-00"
+                  >Heritage Time Capsule Project</a
+                >
+              </div>
+            </div>
+            <!-- Papers and presentations -->
+            <div class="relative group">
+              <a
+                href="#"
+                class="hover:text-gray-200 flex items-center gap-1 text-white font-medium"
+              >
+                Papers and Presentations
+                <i class="fa-solid fa-angle-down mt-1"></i>
+              </a>
+              <div class="absolute left-0 top-full h-7 w-full z-40"></div>
+              <div
+                class="absolute left-0 mt-7 w-56 bg-gray-300 text-sm py-2 z-50 hidden group-hover:block"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Information</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Main Topics</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Proceedings Book
+                </a>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Presentation Templates</a
+                >
+              </div>
+            </div>
+            <!-- partners and sponsers -->
+            <div class="relative group">
+              <a
+                href="#"
+                class="hover:text-gray-200 flex items-center gap-1 text-white font-medium"
+              >
+                Partners and Sponsors
+                <i class="fa-solid fa-angle-down mt-1"></i>
+              </a>
+              <div class="absolute left-0 top-full h-7 w-full z-40"></div>
+              <div
+                class="absolute left-0 mt-7 w-56 bg-gray-300 text-sm py-2 z-50 hidden group-hover:block"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Partners</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Sponsors</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Sponsorship
+                </a>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Exhibition Information</a
+                >
+              </div>
+            </div>
+            <!-- Registration -->
+            <div class="relative group">
+              <a
+                href="#"
+                class="hover:text-gray-200 flex items-center gap-1 text-white font-medium"
+              >
+                Registration
+                <i class="fa-solid fa-angle-down mt-1"></i>
+              </a>
+              <div class="absolute left-0 top-full h-7 w-full z-40"></div>
+              <div
+                class="absolute left-0 mt-7 w-56 bg-gray-300 text-sm py-2 z-50 hidden group-hover:block"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Registration Information</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Dates and Prices</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Payment Options
+                </a>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                >
+                  Register Now</a
+                >
+              </div>
+            </div>
+            <!-- Relevent Info-->
+            <div class="relative group">
+              <a
+                href="#"
+                class="hover:text-gray-200 flex items-center gap-1 text-white font-medium"
+              >
+                Relevent Info
+                <i class="fa-solid fa-angle-down mt-1"></i>
+              </a>
+              <div class="absolute left-0 top-full h-7 w-full z-40"></div>
+              <div
+                class="absolute left-0 mt-7 w-56 bg-gray-300 text-sm py-2 z-50 hidden group-hover:block"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Why Kathmandu ?
+                </a>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                  >Travel Information</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                >
+                  Accommodation
+                </a>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-black hover:text-gray-700"
+                >
+                  Contact</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Mobile Hamburger -->
+          <div class="md:hidden flex items-center">
+            <button id="menu-toggle" class="text-white focus:outline-none">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile Menu-->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-8 py-5">
+          <a href="#" class="block text-white hover:text-gray-200">Home</a>
+          <a href="#" class="block text-white hover:text-gray-200">
+            Conference</a
+          >
+          <a href="#" class="block text-white hover:text-gray-200">Program</a>
+          <a href="#" class="block text-white hover:text-gray-200">Speakers</a>
+          <a href="#" class="block text-white hover:text-gray-200"
+            >Papers and Presentations</a
+          >
+          <a href="#" class="block text-white hover:text-gray-200">
+            Partners and Sponsors</a
+          >
+          <a href="#" class="block text-white hover:text-gray-200">
+            Registration</a
+          >
+          <a href="#" class="block text-white hover:text-gray-200">
+            Relevent Info</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- hero sectioon -->
+    <section class="relative w-full h-screen overflow-hidden group">
+      <!-- Background Video -->
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src="./assets/hero-section-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Overlay shade -->
+      <div class="absolute inset-0 bg-black/40"></div>
+
+      <!-- Text Slides -->
+      <div
+        id="slides"
+        class="absolute inset-0 flex flex-col items-start justify-center text-left text-white z-20 px-20 md:px-32 transition-opacity duration-500"
+      >
+        <!-- Slide 1 -->
+        <div class="slide active">
+          <h1
+            class="text-4xl md:text-6xl font-bold text-yellow-400 drop-shadow tracking-wider"
+          >
+            GeoMandu 2026
+          </h1>
+          <p class="text-lg md:text-xl font-light mt-4">
+            An International Conference Series of Nepal Geotechnical Society
+          </p>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide hidden">
+          <h1
+            class="text-4xl md:text-6xl font-bold text-yellow-400 drop-shadow tracking-wider"
+          >
+            Invitation to GeoMandu 2026
+          </h1>
+          <p class="text-lg md:text-xl font-light mt-4">
+            NGS invites global professionals to GeoMandu 2024 on geotechnical
+            <br />
+            innovation and sustainable infrastructure development.
+          </p>
+        </div>
+      </div>
+
+      <!-- Left Arrow -->
+      <button
+        id="prev"
+        class="absolute left-10 top-1/2 transform -translate-y-1/2 z-30 text-white text-3xl opacity-0 translate-x-[-30px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500"
+      >
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <!-- Right Arrow -->
+      <button
+        id="next"
+        class="absolute right-10 top-1/2 transform -translate-y-1/2 z-30 text-white text-3xl opacity-0 translate-x-[30px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500"
+      >
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </section>
+    <!-- download geomandu -->
+    <section class="w-full bg-[#003B4F] py-12 flex items-center justify-center">
+      <div class="text-center space-y-4">
+        <h2 class="text-white text-lg md:text-2xl font-semibold">
+          To view and download GeoMandu 2024 Photos
+        </h2>
+        <a
+          href="#"
+          target="_blank"
+          class="inline-block bg-white text-black font-semibold px-6 py-2 rounded hover:bg-gray-100 transition"
+        >
+          CLICK HERE
+        </a>
+      </div>
+    </section>
+    <!-- about part -->
+    <section class="max-w-7xl mx-auto px-6 py-12 my-10">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="md:w-2/3">
+          <h2
+            class="text-2xl md:text-3xl font-semibold text-[#006ac6] mb-4 tracking-wide"
+          >
+            About GeoMandu 2024
+          </h2>
+          <p
+            class="max-w-4xl mx-auto text-gray-700 leading-relaxed mb-6 text-justify"
+          >
+            The Nepal Geotechnical Society extends a warm invitation to
+            geotechnical engineers, geoscientists, professionals, and
+            researchers from around the world to participate in “GeoMandu 2024,”
+            the second installment of the esteemed “GeoMandu” series organized
+            by the Nepal Geotechnical Society (NGS). This biennial event is
+            scheduled to take place in Kathmandu on November 28th and 29th,
+            2024, with a central theme of “Geotechnics for Sustainable
+            Infrastructure.”
+          </p>
+          <a
+            href="#"
+            class="inline-block bg-[#006ac6] hover:bg-[#0055a4] text-white font-semibold px-5 py-2 rounded transition"
+          >
+            Read More
+          </a>
+        </div>
+
+        <div class="md:w-1/3 flex justify-center md:justify-end">
+          <img
+            src="./assets/geomandu_logo.png"
+            alt="GeoMandu Logo"
+            class="w-[300px] h-auto"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- message part -->
+    <section class="bg-[#0474c4] text-white py-12">
+      <div
+        class="relative flex items-center justify-center max-w-6xl mx-auto mt-20 group"
+      >
+        <button
+          id="leftBtn"
+          class="absolute left-0 text-3xl px-3 opacity-0 -translate-x-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500"
+        >
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div
+          id="profileWrap"
+          class="flex flex-col md:flex-row items-center gap-32 transition-opacity duration-500"
+        >
+          <img
+            id="personImage"
+            src="./assets/chair-man.jpg"
+            class="w-72 h-72 rounded-full border-2 border-white object-cover"
+          />
+
+          <div class="text-center md:text-left space-y-8">
+            <h3 id="personName" class="text-2xl font-bold">
+              Netra Prakash Bhandary (Prof. Dr.)
+            </h3>
+            <p id="personDesc" class="max-w-md text-justify px-10 md:px-0">
+              Dear Participants and International Delegates: As the GeoMandu2024
+              Organizing Chair, I would first like to warmly welcome you to
+              Kathmandu during this best season of the country. Welcome!
+              GeoMandu 2024, the second international event of Nepal
+              Geotechnical Society is being organized this time with more than
+              350 participants.
+            </p>
+            <button
+              class="mt-4 border px-4 py-2 rounded-md text-[#0474c4] bg-white font-medium hover:bg-[#0055a4] hover:text-white transition-colors duration-300"
+            >
+              Learn more
+            </button>
+          </div>
+        </div>
+
+        <button
+          id="rightBtn"
+          class="absolute right-0 text-3xl px-3 opacity-0 translate-x-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500"
+        >
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+      <!-- GeoMandu Venue Video Section -->
+      <div
+        class="mt-20 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-20"
+      >
+        <!-- YouTube Video -->
+        <div class="w-full md:w-1/2">
+          <div class="aspect-w-16 aspect-h-9">
+            <iframe
+              class="w-full h-64 md:h-80"
+              src="https://www.youtube.com/embed/QCpAKIEixNg"
+              title="GeoMandu Venue Video"
+              frameborder="0"
+              allow="accelerometer;
+              autoplay; clipboard-write; encrypted-media; gyroscope;
+              picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Text Content -->
+        <div class="w-full md:w-1/2 text-white space-y-6 px-10 md:px-0">
+          <h2 class="text-2xl md:text-3xl font-bold">
+            Walking directions to the Radisson Hotel, Kathmandu
+          </h2>
+          <p class="leading-relaxed">
+            Experience an unforgettable event at the Radisson Hotel, Kathmandu —
+            where Nepalese hospitality meets international standards. All
+            registered delegates and guests are welcome. Hurry! Tickets are
+            limited!
+          </p>
+          <p>
+            Already registered? Contact our registration team at
+            <a
+              href="mailto:info@geomandu.org"
+              class="underline hover:text-blue-200"
+              >info@geomandu.org</a
+            >
+            to purchase additional tickets.
+          </p>
+          <button
+            class="mt-4 border px-4 py-2 rounded-md text-[#0474c4] bg-white font-medium hover:bg-[#0055a4] hover:text-white transition smoothe"
+          >
+            View walking directions here
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- welcome letter of chairman -->
+    <section class="bg-white py-12">
+      <div
+        class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-8 md:gap-16 items-start"
+      >
+        <!-- Left Column: Heading + Logo + Photo -->
+        <div class="md:w-1/3 flex flex-col items-start md:items-center">
+          <h2
+            class="text-2xl md:text-3xl font-semibold text-[#0474c4] mb-6 leading-tight"
+          >
+            Welcome letter from <br />Conference Chairman
+          </h2>
+          <img
+            src="./assets/geomandu_logo.png"
+            alt="GeoMandu Logo"
+            class="w-52 mb-10"
+          />
+          <!-- Spacer on desktop -->
+          <div class="flex-1 hidden md:block"></div>
+        </div>
+        <!-- Right Column: Letter -->
+        <div class="md:w-2/3">
+          <p class="text-gray-700 text-lg leading-relaxed mb-6">
+            Dear Esteemed Colleagues,<br /><br />
+            As Chairman of GeoMandu 2024, it is my pleasure to welcome you to
+            Kathmandu for this landmark international conference. We look
+            forward to insightful discussions, sharing of ideas, and forging new
+            collaborations in the heart of Nepal.<br /><br />
+            GeoMandu 2024 will bring together geotechnical engineers,
+            researchers, and professionals from around the globe. Our program
+            features keynote addresses, technical sessions, workshops, and
+            networking opportunities, all focused on advancing geotechnics for
+            sustainable infrastructure.<br /><br />
+            We invite you to explore Nepal’s rich culture and heritage while
+            engaging with leaders in the field. Your participation will
+            contribute greatly to the success of this event and to the future of
+            geotechnical engineering in our region.<br /><br />
+            With warm regards,
+          </p>
+          <div class="mt-8">
+            <span class="font-bold text-[#0474c4] text-lg"
+              >Prof. Netra Prakash Bhandary</span
+            >
+            <span class="block text-gray-600 text-base"
+              >Chairman, GeoMandu 2024</span
+            >
+          </div>
+          <img
+            src="./assets/chair-man.jpg"
+            alt="Chairman"
+            class="w-36 h-36 object-contain rounded-full border-2 border-[#0474c4] mt-10 md:mt-5"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- Featured Videos Section -->
+    <section class="bg-white py-12">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2
+          class="text-2xl md:text-3xl font-semibold text-[#0474c4] mb-8 text-left tracking-wide"
+        >
+          Featured Videos
+        </h2>
+        <div class="grid gap-8 grid-cols-1 md:grid-cols-3">
+          <div class="aspect-w-16 aspect-h-9">
+            <iframe
+              class="w-full h-60"
+              src="https://youtube.com/embed/u8PAvsO_2w8"
+              title="Venue Walkthrough"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="aspect-w-16 aspect-h-9">
+            <iframe
+              class="w-full h-60"
+              src="https://youtube.com/embed/LzkB41BEhiY"
+              title="Promo Video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="aspect-w-16 aspect-h-9">
+            <iframe
+              class="w-full h-60"
+              src="https://www.youtube.com/embed/qWevFO24_ZA"
+              title="Message from Chairman"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- counter -->
+    <section class="py-10 bg-gradient-to-r from-[#0474c4] to-[#0474c4]/80">
+      <div
+        class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between text-white text-center"
+      >
+        <!-- Item 1 -->
+        <div class="flex-1 py-6">
+          <h2
+            class="counter text-4xl md:text-5xl font-extrabold"
+            data-target="33"
+          >
+            0
+          </h2>
+          <div
+            class="mt-2 text-sm md:text-base tracking-widest uppercase opacity-80"
+          >
+            Thought <br />Leaders
+          </div>
+        </div>
+        <!-- Divider -->
+        <div class="hidden md:block h-12 border-l border-white/40"></div>
+        <!-- Item 2 -->
+        <div class="flex-1 py-6">
+          <h2
+            class="counter text-4xl md:text-5xl font-extrabold"
+            data-target="4"
+          >
+            0
+          </h2>
+          <div
+            class="mt-2 text-sm md:text-base tracking-widest uppercase opacity-80"
+          >
+            Conference<br />Sessions
+          </div>
+        </div>
+        <div class="hidden md:block h-12 border-l border-white/40"></div>
+        <!-- Item 3 -->
+        <div class="flex-1 py-6">
+          <h2
+            class="counter text-4xl md:text-5xl font-extrabold"
+            data-target="15"
+          >
+            0
+          </h2>
+          <div
+            class="mt-2 text-sm md:text-base tracking-widest uppercase opacity-80"
+          >
+            Organizing<br />Partners
+          </div>
+        </div>
+        <div class="hidden md:block h-12 border-l border-white/40"></div>
+        <!-- Item 4 -->
+        <div class="flex-1 py-6">
+          <h2
+            class="counter text-4xl md:text-5xl font-extrabold"
+            data-target="29"
+          >
+            0
+          </h2>
+          <div
+            class="mt-2 text-sm md:text-base tracking-widest uppercase opacity-80"
+          >
+            Trusted <br />
+            Sponsors
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- partners -->
+    <section class="bg-white py-12">
+      <div class="max-w-7xl mx-auto px-4">
+        <!-- Destination Partner -->
+        <div class="text-center mb-12">
+          <h2 class="text-2xl md:text-3xl font-semibold text-[#0474c4] mb-2">
+            Destination Partner
+          </h2>
+          <!-- <img
+            src="./assets/destination_partner_logo.png"
+            alt="Destination Partner Logo"
+            class="mx-auto h-20 md:h-28 object-contain"
+          /> -->
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          <!-- Sponsor 1 -->
+          <div class="flex flex-col items-center text-center">
+            <img
+              src="./assets/gold.png"
+              alt="Sponsor 1"
+              class="mb-6 h-16 md:h-20 object-contain"
+            />
+            <h3 class="text-xl font-bold text-[#0474c4]/80 mb-2">
+              Gold Sponsor
+            </h3>
+            <p class="text-gray-500 leading-relaxed">
+              For over 140 years, Maccaferri is a leading international provider
+              of advanced solutions to the civil, geotechnical and environmental
+              construction markets. We deliver innovative, long-lasting and
+              environmentally friendly solutions, from retaining walls to
+              hydraulic works and from rockfall mitigation systems to soil
+              reinforcement.
+            </p>
+          </div>
+          <!-- Sponsor 2 -->
+          <div class="flex flex-col items-center text-center">
+            <img
+              src="./assets/silver.jpg"
+              alt="Sponsor 2"
+              class="mb-6 h-16 md:h-20 object-contain"
+            />
+            <h3 class="text-xl font-bold text-[#0474c4]/80 mb-2">
+              Silver Sponsor
+            </h3>
+            <p class="text-gray-500 leading-relaxed">
+              Geoquest delivers advanced solutions in reinforced backfill
+              applications and soil-structure interaction. Our expertise covers
+              retaining walls, precast concrete solutions, geosynthetics, and
+              environmental hazard protection, providing innovative, reliable,
+              and sustainable options for civil and geotechnical construction
+              projects.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- map  -->
+    <section class="bg-white">
+      <div class="overflow-hidden">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.2470917130636!2d85.3166047753151!3d27.720209824184244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190b4cfb2a55%3A0xe8c0e0a6e37bb1c!2sRadisson%20Hotel%20Kathmandu!5e0!3m2!1sen!2snp!4v1699260747923!5m2!1sen!2snp"
+          width="100%"
+          height="600"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="w-full"
+        ></iframe>
+      </div>
+    </section>
+    <!-- stay connected -->
+    <section class="bg-white py-12">
+      <div
+        class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8"
+      >
+        <!-- Left: Text and button -->
+        <div
+          class="flex-1 animate-on-scroll opacity-0 translate-y-32 transition-all duration-1000 ease-in-out"
+        >
+          <h2
+            class="text-3xl md:text-4xl font-semibold text-[#0474c4] mb-2 tracking-wide"
+          >
+            Stay Connected
+          </h2>
+          <p class="text-lg text-gray-600 mb-8">
+            Subscribe today and get the latest notifications on the GeoMandu
+            2024 Conference.
+          </p>
+          <a
+            href="#subscribe"
+            class="inline-block px-8 py-3 text-xl font-semibold tracking-wide border-2 border-[#0474c4] text-[#0474c4] rounded-full transition hover:bg-[#0474c4] hover:text-white hover:border-[#0474c4] mb-8"
+          >
+            Subscribe here
+          </a>
+        </div>
+        <!-- Right: Logo -->
+        <div class="flex-shrink-0">
+          <img
+            src="./assets/geomandu_logo.png"
+            alt="GeoMandu Logo"
+            class="w-48 md:w-60"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-[#eaf4fb] text-white pt-16 pb-8 z-50">
+      <div
+        class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12"
+      >
+        <!-- Contact Us -->
+        <div class="text-gray-700">
+          <h3 class="text-3xl font-semibold mb-4">Contact Us</h3>
+          <p class="mb-2">For all registration enquiries contact us at:</p>
+          <a
+            href="mailto:register@geomandu.org"
+            class="text-[#0474c4] break-all link-underline"
+            >register@geomandu.org</a
+          >
+          <p class="mt-4 mb-2">
+            For all program and general enquiries contact us at:
+          </p>
+          <a
+            href="mailto:info@geomandu.org"
+            class="text-[#0474c4] break-all link-underline"
+            >info@geomandu.org</a
+          >
+          <p class="mt-4">Telephone: +977 1-4411810</p>
+        </div>
+        <!-- Explore Site -->
+        <div class="text-gray-700">
+          <h3 class="text-3xl font-semibold mb-4">Explore Site</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="font-medium text-gr link-underline-footer"
+                >Venue</a
+              >
+            </li>
+            <li>
+              <a href="#" class="font-medium link-underline-footer">Program</a>
+            </li>
+            <li>
+              <a href="#" class="font-medium link-underline-footer"
+                >Registration</a
+              >
+            </li>
+            <li>
+              <a href="#" class="font-medium link-underline-footer">Policies</a>
+            </li>
+            <li>
+              <a href="#" class="font-medium link-underline-footer"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- Event Organisers -->
+        <div class="text-gray-700">
+          <h3 class="text-3xl font-semibold mb-4">Event Organisers</h3>
+          <p>Nepal Geotechnical Society</p>
+          <p>P.O. Box 231</p>
+          <p>Kathmandu, Nepal</p>
+          <p>Telephone: +977 1-4411810</p>
+        </div>
+        <!-- Conference Host & Partners -->
+        <div class="space-y-4 text-gray-700">
+          <h3 class="text-3xl font-semibold mb-2">Supporting Partners</h3>
+          <div class="flex flex-col space-y-2">
+            <img
+              src="./assets/support-2.png"
+              alt="Partner 2"
+              class="h-28 object-contain p-1"
+            />
+            <img
+              src="./assets/sup-1.png"
+              alt="Partner 1"
+              class="h-28 object-contain p-1"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 text-center text-gray-800 text-sm">
+        <p>
+          We acknowledge the traditional custodians of Kathmandu Valley and all
+          indigenous peoples of Nepal, and pay respect to elders past, present
+          and emerging.
+        </p>
+        <p class="mt-2">
+          Copyright &copy; 2024 Nepal Geotechnical Society | All Rights Reserved
+          |
+          <a href="#" class="hover:underline text-[#0474c4]">Privacy Policy</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="./scripts/index-hero.js"></script>
+    <script src="./scripts/menu.js"></script>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
