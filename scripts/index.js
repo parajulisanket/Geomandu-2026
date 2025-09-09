@@ -1,17 +1,13 @@
 const profiles = [
   {
-    img: "./assets/chair-man.jpg",
-    name: "Netra Prakash Bhandary (Prof. Dr.)",
-    desc: `Dear Participants and International Delegates: As the GeoMandu2024 Organizing Chair, I would first like to warmly welcome you to
-Kathmandu during this best season of the country. Welcome!
-GeoMandu 2024, the second international event of Nepal
-Geotechnical Society is being organized this time with more than
-350 participants.`,
+    img: "./assets/dhundi-pathak.jpg",
+    name: "Dr. Dhundi Raj Pathak (Convener)",
+    desc: `As Convener of GeoMandu 2026, I am honored to welcome you to the third international conference of the Nepal Geotechnical Society, taking place in Kathmandu from November 25–28, 2026. Under the theme “Geotechnics for Mountain Infrastructure,” the event will explore the challenges of building resilient infrastructure in mountainous regions shaped by geohazards and complex geology. GeoMandu 2026 provides a platform to share knowledge, discuss emerging trends, and strengthen collaboration between research and practice. I warmly welcome you to Kathmandu and look forward to an inspiring and productive conference.`,
   },
   {
-    img: "./assets/message-img2.jpg",
-    name: "Mandip Subedi, PhD",
-    desc: `It is a great honor to welcome you all to GeoMandu 2024, the second edition of the biennial international conference organized by the Nepal Geotechnical Society (NGS). This year, we unite under the theme “Geotechnics for Sustainable Infrastructure,” addressing how geotechnical engineering can advance the development of resilient and environmentally sustainable infrastructure.`,
+    img: "./assets/er-rajan-kc.jpeg",
+    name: "Er. Rajan KC (Youth Convener)",
+    desc: `As Youth Convener of GeoMandu 2026, I am honored to welcome you to the international conference of the Nepal Geotechnical Society, taking place from November 25–28, 2026 in Kathmandu. Our theme, “Geotechnics for Mountain Infrastructure,” reflects the urgent need for innovative solutions to landslides, earthquakes, and fragile terrain in Nepal and other mountain regions. This event offers young engineers and students a valuable opportunity to engage with global experts, share ideas, and contribute to building resilient and sustainable infrastructure.`,
   },
 ];
 
@@ -162,3 +158,32 @@ function animateOnScroll() {
 }
 window.addEventListener("scroll", animateOnScroll);
 window.addEventListener("load", animateOnScroll);
+
+// highlight video part
+
+(function () {
+  const list = document.getElementById("videoList");
+  const player = document.getElementById("mainPlayer");
+  if (!list || !player) return;
+
+  // Optional: mark active item
+  function setActive(btn) {
+    list.querySelectorAll(".videoItem").forEach((el) => {
+      el.classList.remove("ring-2", "ring-[#0474c4]", "bg-gray-50");
+    });
+    btn.classList.add("ring-2", "ring-[#0474c4]", "bg-gray-50");
+  }
+
+  list.addEventListener("click", (e) => {
+    const btn = e.target.closest(".videoItem");
+    if (!btn) return;
+    const id = btn.getAttribute("data-video");
+    const title = btn.getAttribute("data-title") || "GeoMandu Video";
+
+    // Swap the main iframe to the selected video (autoplay)
+    player.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+    player.title = title;
+
+    setActive(btn);
+  });
+})();
