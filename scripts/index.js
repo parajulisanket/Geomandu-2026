@@ -187,3 +187,18 @@ window.addEventListener("load", animateOnScroll);
     setActive(btn);
   });
 })();
+
+// popup banner
+window.addEventListener("load", () => {
+  const popup = document.getElementById("popup-banner");
+  const closeBtn = document.getElementById("close-popup");
+
+  setTimeout(() => {
+    popup.classList.remove("hidden");
+  }, 5000);
+
+  // Close popup on click
+  closeBtn.addEventListener("click", () => {
+    popup.classList.add("hidden");
+  });
+});
