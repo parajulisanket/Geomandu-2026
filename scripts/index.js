@@ -2,7 +2,7 @@ const profiles = [
   {
     img: "./assets/dhundi-pathak.jpg",
     name: "Dr. Dhundi Raj Pathak (Convener)",
-    desc: `As Convener of GeoMandu 2026, I am honored to welcome you to the third international conference of the Nepal Geotechnical Society, taking place in Kathmandu from November 25–28, 2026. Under the theme “Geotechnics for Mountain Infrastructure,” the event will explore the challenges of building resilient infrastructure in mountainous regions shaped by geohazards and complex geology. GeoMandu 2026 provides a platform to share knowledge, discuss emerging trends, and strengthen collaboration between research and practice. I warmly welcome you to Kathmandu and look forward to an inspiring and productive conference.`,
+    desc: `With great excitement, I invite you to GeoMandu 2026, an international conference organized by the Nepal Geotechnical Society from 25–28 November 2026 under the theme “Geotechnics for Mountain Infrastructure.” This theme reflects both Nepal’s priorities and global mountain challenges. We welcome submissions on climate-resilient geotechnics, seismic safety, sustainable slopes, and digital innovations. Accepted papers will be published in peer-reviewed Springer proceedings indexed in Scopus and EI Compendex. This is an opportunity to bridge research and practice. On behalf of NGS and as Convener, I warmly welcome your participation in advancing sustainable mountain infrastructure at GeoMandu 2026.`,
   },
   {
     img: "./assets/er-rajan-kc.jpeg",
