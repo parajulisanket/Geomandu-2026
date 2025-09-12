@@ -2,7 +2,7 @@ const profiles = [
   {
     img: "./assets/dhundi-pathak.jpg",
     name: "Dr. Dhundi Raj Pathak (Convener)",
-    desc: `With great excitement, I invite you to GeoMandu 2026, an international conference organized by the Nepal Geotechnical Society from 25–28 November 2026 under the theme “Geotechnics for Mountain Infrastructure.” This theme reflects both Nepal’s priorities and global mountain challenges. We welcome submissions on climate-resilient geotechnics, seismic safety, sustainable slopes, and digital innovations. Accepted papers will be published in peer-reviewed Springer proceedings indexed in Scopus and EI Compendex. This is an opportunity to bridge research and practice. On behalf of NGS and as Convener, I warmly welcome your participation in advancing sustainable mountain infrastructure at GeoMandu 2026.`,
+    desc: `With great excitement, I invite you to GeoMandu 2026, an international conference organized by the Nepal Geotechnical Society from 25–28 November 2026 under the theme “Geotechnics for Mountain Infrastructure.” This theme reflects both Nepal’s priorities and global mountain challenges. We welcome submissions on climate-resilient geotechnics, seismic safety, sustainable slopes, and digital innovations. Accepted papers will be published in peer-reviewed Springer proceedings indexed in Scopus and EI Compendex. This is an opportunity to bridge research and practice.`,
   },
   {
     img: "./assets/er-rajan-kc.jpeg",
@@ -18,12 +18,16 @@ const descEl = document.getElementById("personDesc");
 const wrap = document.getElementById("profileWrap");
 const leftBtn = document.getElementById("leftBtn");
 const rightBtn = document.getElementById("rightBtn");
+const sliderRoot = document.getElementById("sliderRoot");
 
-wrap.classList.add("transition-opacity", "duration-500");
+// Make sure the stage clips slides
+sliderRoot.classList.add("overflow-hidden", "relative");
 
+// ---- State ----
 let idx = 0;
 let animating = false;
 
+// ---- Utils ----
 async function preload(src) {
   const img = new Image();
   img.src = src;
@@ -37,58 +41,165 @@ async function preload(src) {
   } catch (_) {}
 }
 
-function swapProfile(nextIdx) {
+function applyProfileTo(container, i) {
+  const p = profiles[i];
+  container.querySelector("#personImage").src = p.img;
+  container.querySelector("#personName").textContent = p.name;
+  container.querySelector("#personDesc").textContent = p.desc;
+}
+
+function cloneWrap() {
+  const clone = wrap.cloneNode(true);
+  // Ensure unique IDs aren’t duplicated in DOM queries:
+  // we won’t query by ID inside the DOM after inserting the clone,
+  // only via clone.querySelector scoped lookups (works fine even with same IDs).
+  return clone;
+}
+
+/**
+ * Slide to nextIdx
+ * @param {number} nextIdx
+ * @param {number} dir +1 for right->left (next), -1 for left<-right (prev)
+ */
+async function slideProfile(nextIdx, dir = 1) {
   if (animating || nextIdx === idx) return;
   animating = true;
 
-  // Start fade out
-  wrap.classList.add("opacity-0");
+  const next = profiles[nextIdx];
+  await preload(next.img);
 
-  // When fade-out finishes, swap content, then fade-in
-  wrap.addEventListener(
-    "transitionend",
-    async function handleOut(e) {
-      if (e.propertyName !== "opacity") return;
-      wrap.removeEventListener("transitionend", handleOut);
+  // Lock container height to prevent jump during absolute positioning
+  const stageHeight = wrap.offsetHeight;
+  sliderRoot.style.height = stageHeight + "px";
 
-      const next = profiles[nextIdx];
+  // Prepare current and incoming panels
+  const currentPanel = wrap;
+  const incomingPanel = cloneWrap();
+  applyProfileTo(incomingPanel, nextIdx);
 
-      // Preload next image to prevent flashes
-      await preload(next.img);
+  // Position panels for slide
+  // Current: at 0; Incoming: off-screen (dir * 100%)
+  currentPanel.style.transform = "translateX(0%)";
+  incomingPanel.style.transform = `translateX(${dir * 100}%)`;
 
-      // Swap content
-      imgEl.src = next.img;
-      nameEl.textContent = next.name;
-      descEl.textContent = next.desc;
+  // Make both absolutely stacked
+  Object.assign(currentPanel.style, {
+    position: "absolute",
+    inset: "0",
+    transition: "transform 500ms ease-out",
+    willChange: "transform",
+  });
+  Object.assign(incomingPanel.style, {
+    position: "absolute",
+    inset: "0",
+    transition: "transform 500ms ease-out",
+    willChange: "transform",
+  });
 
-      // Force reflow so the next opacity change animates
-      void wrap.offsetWidth;
+  // Insert incoming on top
+  sliderRoot.appendChild(incomingPanel);
 
-      // Fade in
-      wrap.classList.remove("opacity-0");
+  // Force reflow to ensure transitions apply
+  void currentPanel.offsetWidth;
 
-      wrap.addEventListener(
-        "transitionend",
-        function handleIn(ev) {
-          if (ev.propertyName !== "opacity") return;
-          wrap.removeEventListener("transitionend", handleIn);
-          idx = nextIdx;
-          animating = false;
-        },
-        { once: true }
-      );
-    },
-    { once: true }
-  );
+  // Animate: move current out, incoming in
+  currentPanel.style.transform = `translateX(${-dir * 100}%)`;
+  incomingPanel.style.transform = "translateX(0%)";
+
+  function cleanup() {
+    applyProfile(nextIdx);
+
+    currentPanel.style.transition = "none";
+    currentPanel.style.transform = "translateX(0%)";
+
+    incomingPanel.remove();
+
+    void currentPanel.offsetWidth;
+
+    currentPanel.style.position = "";
+    currentPanel.style.inset = "";
+    currentPanel.style.willChange = "";
+    currentPanel.style.transition = "";
+    currentPanel.style.transform = "";
+    sliderRoot.style.height = "";
+
+    idx = nextIdx;
+    animating = false;
+  }
+
+  // Listen for the incoming panel transition end
+  const onEnd = (e) => {
+    if (e.propertyName !== "transform") return;
+    incomingPanel.removeEventListener("transitionend", onEnd);
+    cleanup();
+  };
+  incomingPanel.addEventListener("transitionend", onEnd);
 }
 
+function applyProfile(i) {
+  // Apply into the canonical wrap (the one in the DOM initially)
+  const p = profiles[i];
+  imgEl.src = p.img;
+  nameEl.textContent = p.name;
+  descEl.textContent = p.desc;
+}
+
+function next() {
+  slideProfile((idx + 1) % profiles.length, +1);
+}
+
+function prev() {
+  slideProfile((idx - 1 + profiles.length) % profiles.length, -1);
+}
+
+// ---- Autoplay with hover pause ----
+const INTERVAL_MS = 3000;
+let timerId = null;
+
+function startAuto() {
+  stopAuto();
+  timerId = setInterval(next, INTERVAL_MS);
+}
+
+function stopAuto() {
+  if (timerId) {
+    clearInterval(timerId);
+    timerId = null;
+  }
+}
+
+// Hover pause
+sliderRoot.addEventListener("mouseenter", stopAuto);
+sliderRoot.addEventListener("mouseleave", startAuto);
+
+// Tab visibility pause
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) stopAuto();
+  else startAuto();
+});
+
+function nudgeAutoAfterManual() {
+  stopAuto();
+  startAuto();
+}
+
+// Controls
 leftBtn.addEventListener("click", () => {
-  swapProfile((idx - 1 + profiles.length) % profiles.length);
+  prev();
+  nudgeAutoAfterManual();
 });
 
 rightBtn.addEventListener("click", () => {
-  swapProfile((idx + 1) % profiles.length);
+  next();
+  nudgeAutoAfterManual();
 });
+
+// ---- Init ----
+(async function init() {
+  await Promise.allSettled(profiles.map((p) => preload(p.img)));
+  applyProfile(0);
+  startAuto();
+})();
 
 // counter part js code
 document.addEventListener("DOMContentLoaded", () => {
